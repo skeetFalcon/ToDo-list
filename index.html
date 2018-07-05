@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ToDo List</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="css/reset.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>
+<body>
+
+	<main class="task flex-col">
+		<header class="task__header flex-row">
+			<input type="text" id="title" autocomplete="off" autocorrect="off" autofocus placeholder="Set your task here...">
+			<button id="save">Save</button>
+		</header>
+		<div class="task__container">
+			<ul class="task__task-list"></ul>
+		</div>
+	</main>
+
+	<script src="js/main.js"></script>
+</body>
+</html>

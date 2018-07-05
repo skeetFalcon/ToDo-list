@@ -1,0 +1,207 @@
+*::before, *, *::after {
+	box-sizing: border-box;
+}
+*::-webkit-scrollbar {
+	display: none;
+}
+
+
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background: #eee;
+}
+body, input, button {
+	font-family: Quicksand;
+}
+
+.task {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 60%;
+	height: 80vh;
+}
+
+/*======================================
+---------------INPUT-BAR----------------
+=======================================*/
+
+.task__header {
+	background: rgb(18, 112, 155);
+	padding: 20px;
+	margin-bottom: 30px;
+}
+.task__header input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+.task__header input:-moz-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+.task__header input::-moz-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+.task__header input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+.task__header input {
+	background: rgba(18, 112, 155);
+
+	min-width: 50%;
+	flex: 6;
+	font-size: 2em;
+	border: none;
+	text-align: center;
+	color: #fff;
+}
+.task__header input:focus {
+	outline: none;
+	box-shadow: 0 0 5px rgba(255, 255, 255, .6);
+	border: 1px solid  rgba(255, 255, 255, .6);
+	border-radius: 5px;
+}
+.task__header button {
+	margin-left: 10px;
+	border: none;
+	font-size: 1em;
+	width: 10%;
+	max-width: 300px;
+	padding: 20px 0;
+
+	box-shadow: 0 2px 2px #aaa;
+	background: #eee;
+
+	flex:1;
+}
+.task__header button:active {
+	background: #fff;
+	background: #70a9c3;
+	box-shadow: 0px 0px 1px #aaa;
+}
+.task__header button:focus {
+	outline: none;
+}
+
+/*======================================
+-------------TASK-CONTAINER-------------
+=======================================*/
+.task__container {
+	width: 100%;
+	height: 100%;
+	padding: 20px 0 20px 20px;
+	background: #fff;
+	flex: 6;
+	overflow: hidden;
+}
+
+.task__task-list {
+	box-sizing: content-box;
+	overflow-y: scroll;
+
+	width: 100%;
+	height: 100%;
+	list-style: none;
+	padding: 0;
+	padding-right: 17px;
+	margin: 0;
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: flex-start;
+}
+.task__task-list:empty:after {
+	content:  "Let's make some tasks!";
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.task__task-item {
+	width: 350px;
+	height: 100px;
+	padding: 10px;
+
+
+	background: #11ee88;
+	background: rgba(18, 112, 155, .6);
+
+	margin: 10px;
+	font-size: 1.2em;
+	box-shadow: 0px 2px 2px #aaa;
+
+	display: flex;
+	align-items: center;
+	text-overflow: ellipsis;
+	overflow: hidden;
+
+}
+.task__task-item i {
+	padding: 5px;
+	margin-left: 5px;
+	font-size: 2em;
+	opacity: 0;
+}
+.task__task-item:hover > i { opacity: .5; }
+.task__task-item > i:hover { opacity: 1 }
+
+.fa-check { color:#0bed2d}
+.fa-pen { color: #ff9800 }
+
+.task__task-item div {
+	overflow-y: hidden;
+	text-overflow: ellipsis;
+	flex: 4;
+	word-wrap: break-word;
+
+}
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+.flex-item {
+	flex: 1;
+}
+
+/*======================================
+-----------------MEDIA-----------------
+=======================================*/
+@media (max-width: 1270px) {
+	.task {
+		width: 100%;
+		height: 100%;
+	}
+	.task__header button, header input {
+		font-size: 3.5vw;
+	}
+	.task__container {
+		flex: 10;
+		padding: 20px 37px 20px 20px;
+	}
+	.task__task-list {
+		display: block;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.task__task-item {
+		padding: 15px 10px;
+		width: 100%;
+		height: 15vh;
+		font-size: 3.5vw;
+	}
+	.task__task-item i {
+		opacity: .5;
+	}
+}
